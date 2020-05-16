@@ -322,7 +322,7 @@ input::placeholder{
   }
   .left{
     align-items: flex-start;
-    margin:0px 0px 0px calc(100% - 350px);
+    margin:0px 0px 0px calc(100% - 330px);
   }
   .spacial_left{
     width:100%;
@@ -352,9 +352,6 @@ input::placeholder{
   .app_wapper{
     height:auto;
   }
-  .spacial_left > div:first-child{
-
-  }
   .spacial_left > div:last-child input{
     width:90px;
   }
@@ -362,11 +359,27 @@ input::placeholder{
     padding:7px 10px;
   }
   .int_calc_body{
-    width:calc(100% - 10px);
-    padding:30px 5px 15px 5px;
+    width:calc(100% - 20px);
+    padding:30px 10px 15px 10px;
+  }
+  .int_calc_body > div:last-child{
+    width:calc(100% - 20px);
+    padding:0px 10px;
+  }    
+  .int_calc_body_level2_level1{
+    width:330px;
+  }
+  .int_calc_body_level2_level2{
+    width:330px;
+  }
+  .int_calc_body_level2_level3{
+    width:330px;
   }
   .left_ad{
     height:auto;
     justify-content:center;
+  }
+  .left{
+    width:330px;
   }
 }
