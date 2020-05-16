@@ -9,7 +9,7 @@ const IntCalc = () => {
     // true is danli
     
     const [total, setTotal] = useState(0);
-    const [int, setInt] = useState("0");
+    const [int, setInt] = useState(0);
 
     const [tax1, setTax1] = useState();
     const [tax2, setTax2] = useState();
@@ -27,11 +27,18 @@ const IntCalc = () => {
         if(type === true){
             if(type2 === false){
                 console.log("예치,단리");
-                setTotal(Number(money));
-                let temp =  month * (percent/1200) * money;
-                setInt(temp);
-                setTax1(temp*0.154);
-                setTax2(temp*0.095);
+                if(money > 1){
+                    setTotal(Number(money));
+                    let temp =  month * (percent/1200) * money;
+                    setInt(temp);
+                    setTax1(temp*0.154);
+                    setTax2(temp*0.095);
+                }else{
+                    setTotal(150000);
+                    setInt(12375);
+                    setTax1(12375*0.154);
+                    setTax2(12375*0.095);
+                }
             }else{
                 console.log("적립,단리");
                 if(money > 1){
@@ -56,21 +63,35 @@ const IntCalc = () => {
         }else{
             if(type2 === false){
                 console.log("예치,복리");
-                setTotal(Number(money));
-                //  원금*(1+r)(n/12)
-                let result =  Math.pow([(1 + (percent/1200))],[month*12/12]) * money;
-                let tt = result - money
-                setInt(tt);
-                setTax1(tt*0.154);
-                setTax2(tt*0.095);
+                if(money > 1){
+                    setTotal(Number(money));
+                    //  원금*(1+r)(n/12)
+                    let result =  Math.pow([(1 + (percent/1200))],[month*12/12]) * money;
+                    let tt = result - money
+                    setInt(tt);
+                    setTax1(tt*0.154);
+                    setTax2(tt*0.095);
+                }else{
+                    setTotal(150000);
+                    setInt(12869);
+                    setTax1(12869*0.154);
+                    setTax2(12869*0.095);
+                }
             }else{
                 console.log("적립,복리");
-                setTotal(month * money);
-                let result = (money*(Math.pow([1+(percent/1200)],[month])-1))/(percent/1200)
-                let tt = result - (month*money)
-                setInt(tt);
-                setTax1(tt*0.154);
-                setTax2(tt*0.095);
+                if(money > 1){
+                    setTotal(month * money);
+                    let result = (money*(Math.pow([1+(percent/1200)],[month])-1))/(percent/1200)
+                    let tt = result - (month*money)
+                    setInt(tt);
+                    setTax1(tt*0.154);
+                    setTax2(tt*0.095);
+                }else{
+                    setTotal(2700000);
+                    setInt(107803);
+                    setTax1(107803*0.154);
+                    setTax2(107803*0.095);
+                }
             }
         }
     },[money,month,percent,type,type2])
