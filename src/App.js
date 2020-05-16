@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './default.css';
+import IntCalc from "./componnents/interest_calculator"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app_wapper">
+      <div>
+        <div className="left_ad">
+          광고
+        </div>
+        <div className="content">
+          <IntCalc />
+        </div>
+      </div>
     </div>
   );
 }
