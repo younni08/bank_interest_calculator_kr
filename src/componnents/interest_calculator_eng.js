@@ -8,8 +8,8 @@ const IntCalc = () => {
     const [type2, setType2] = useState(true);
     // true is danli
     
-    const [total, setTotal] = useState(0);
-    const [int, setInt] = useState("0");
+    const [total, setTotal] = useState();
+    const [int, setInt] = useState();
 
     const [tax1, setTax1] = useState();
     const [tax2, setTax2] = useState();
@@ -34,14 +34,7 @@ const IntCalc = () => {
                 setTax2(temp*0.095);
             }else{
                 console.log("적립,단리");
-                if(money > 1){
-                    setTotal(month * money);
-                }else{
-                    setTotal(2700000);
-                    setInt(117562);
-                    setTax1(117562*0.154);
-                    setTax2(117562*0.095);
-                }
+                setTotal(month * money);
                 let couter = 0
                 for(let i = 0;i<month;i++){
                     let temp = money * (percent/1200) * (i+1);
