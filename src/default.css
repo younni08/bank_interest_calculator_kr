@@ -382,4 +382,13 @@ input::placeholder{
   .left{
     width:330px;
   }
+  .footer{
+    font-size:0.9em;
+  }
+}
+.footer{
+  margin:20px 0px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }

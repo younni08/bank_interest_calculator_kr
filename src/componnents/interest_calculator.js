@@ -287,6 +287,10 @@ const IntCalc = () => {
                     </div>
                 </div>
             </div>
+            <div className="footer">
+                <span>Copyright(c) 2020 All rights reserved by WoonNa</span>
+                <span>contact: younni08@naver.com</span>
+            </div>
         </div>
     )
 }
