@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const IntCalc = () => {
     const [money, setMoney] = useState();
@@ -172,8 +173,11 @@ const IntCalc = () => {
     return (
         <div className="int_calc">
             <div className="int_calc_header">
-                {/* <div>다른 앱</div> */}
-                <div></div>
+                <div>
+                    <Link to="loan">
+                        <div>대출 이자 계산기</div>
+                    </Link>
+                </div>
                 <span className="int_calc_title">적금 계산기</span>
             </div>
             <div className="int_calc_body">

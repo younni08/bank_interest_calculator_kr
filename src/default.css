@@ -26,6 +26,9 @@ body{
   justify-content:center;
 }
 /*_______________________ int_calc _____________________*/
+a{
+  text-decoration: none;
+}
 .int_calc{
   display:flex;
   flex-direction:column;
@@ -35,11 +38,32 @@ body{
   display:flex;
   flex-direction:column;
   padding:0px 10px;
-  margin:10px 0px 15px 0px;
+  margin:5px 0px 15px 0px;
 }
 .int_calc_header > div{
   display:flex;
   justify-content:flex-end;
+  cursor: pointer;
+}
+.int_calc_header > div a > div{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:3px 7px;
+  /* border-top:solid 2px #585858; */
+  /* border-bottom:solid 2px #585858; */
+  border:solid 1px #000;
+  border-radius:5px;
+  margin:0px 0px -10px 10px;
+  color:#000;
+  font-weight:bold;
+  transition:all 0.3s;
+  cursor: pointer;
+}
+.int_calc_header > div a > div:hover{
+  transition:all 0.3s;
+  color:#097dff;
+  border:solid 1px #097dff;
 }
 .int_calc_title{
   font-size:2em;
@@ -142,6 +166,27 @@ input::placeholder{
   font-size:1.1em;
   font-weight:bold;
   color:#585858;
+}
+.left_with_options{
+  display:flex;
+
+}
+.left_with_options > span{
+  display:flex;
+  font-size:1em;
+  margin:0px 0px 0px 10px;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius:5px;
+  border:solid 1px #919191;
+  color:#919191;
+  font-weight:bold;
+  transition:all 0.3s;
+  cursor:pointer;
+}
+.left_with_options > span.on{
+  border:solid 1px #097dff;
+  color:#097dff;
 }
 .int_calc_body_level3{
   display:flex;
@@ -302,7 +347,108 @@ input::placeholder{
   margin:0px 0px 0px 5px;
   color:#919191;
 }
-
+.footer{
+  margin:20px 0px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+/* page 2 */
+.int_calc_body_level22{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+.int_calc_body_level22 > div:first-child{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.int_calc_body_level22 > div:first-child > span{
+  font-size:1.5em;
+  font-weight:bold;
+}
+.int_calc_body_level22 > div:first-child > div{
+  width:350px;
+  border-bottom:solid 1px #097dff;
+  display:flex;
+  justify-content:space-between;
+  align-items: flex-end;
+}
+.int_calc_body_level22 > div:first-child > div > span{
+  display:block;
+  margin:0px 0px 5px 0px;
+  color:#585858;
+  font-weight:bold;
+}
+.int_calc_body_level22 > div:first-child > div > div{
+  flex:1;
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.int_calc_body_level22 > div:first-child > div > div > span:nth-child(1){
+  font-size:2em;
+  color: #097dff;
+  font-weight:bold;
+}
+.int_calc_body_level22 > div:first-child > div > div > span:nth-child(2){
+  display:block;
+  font-size:1.1em;
+  font-weight:bold;
+  color:#585858;
+  margin:0px 0px 5px 10px;
+}
+.debt_result{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  margin:15px 0px 0px 0px;
+}
+.debt_result > div{
+  display:flex;
+}
+.debt_result div:first-child span{
+  justify-content: center;
+  border-top:solid 1px #eaeaea;
+  background: #f4f4f4;
+}
+.debt_result span{
+  border-bottom:solid 1px #eaeaea;
+  border-left:solid 1px #eaeaea;
+  display:flex;
+  justify-content: flex-end;
+  padding:2px 5px;
+}
+.debt_result span:last-child{
+  border-right:solid 1px #eaeaea;
+}
+.debt_result span:nth-child(1){flex:1}
+.debt_result span:nth-child(2){flex:4}
+.debt_result span:nth-child(3){flex:4}
+.debt_result span:nth-child(4){flex:3}
+.debt_result span:nth-child(5){flex:4}
+.hit_calc{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+.hit_calc span{
+  display:flex;
+  background:#097dff;
+  padding:5px 15px;
+  border-radius:5px;
+  color:#fff;
+  font-weight:bold;
+  font-size:2em;
+  margin:-15px 0px 20px 0px;
+  cursor: pointer;
+}
+.hit_calc span:hover{
+  background:#0D3A8F;
+  transition:all 0.8s;
+  border-radius:10px;
+}
 
 @media screen and (max-width: 1000px) {
   .app_wapper > div{
@@ -365,7 +511,7 @@ input::placeholder{
   .int_calc_body > div:last-child{
     width:calc(100% - 20px);
     padding:0px 10px;
-  }    
+  }
   .int_calc_body_level2_level1{
     width:330px;
   }
@@ -385,10 +531,22 @@ input::placeholder{
   .footer{
     font-size:0.9em;
   }
-}
-.footer{
-  margin:20px 0px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  .left_with_options > span{
+    margin:0px 0px 0px 7px;
+    font-size:0.8em;
+    padding:3px 5px;
+  }
+  .hit_calc span{
+    margin:20px 0px -5px 0px;
+  }
+  .int_calc_body_level22 > div:first-child{
+    flex-direction:column;
+  }
+  .int_calc_body_level22 > div:first-child > div{
+    margin:10px 0px 0px 0px;
+    width:330px;
+  }
+  .debt_result span{
+    font-size:0.8em;
+  }
 }
