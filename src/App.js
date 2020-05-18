@@ -16,6 +16,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={IntCalc} />
             <Route path="/loan" component={IntCalc2} />
+            <Route component={IntCalc} />
           </Switch>
         </div>
       </div>
